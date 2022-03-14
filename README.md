@@ -1,6 +1,6 @@
 # CinemaTicketBookingSystem
-The project is written with AvaloniaUI
+The project was created with AvaloniaUI
 
-User can register in system and log in then. In users own account he keeps all actual tickets. 
-User can choose one of the available cinemas and interesting film then. On virtual cinema hall user can book required number of tickets by clicking on free seats.
-All information about films parses from wikipedia.org.
+User is able to check all his active tickets after simple process of registration and signing in. 
+Cinema assistant provides a possibility to switch between available cinemas and to make your best choice of film you want to see today. Furthermore, one-click-booking allows you to order your favorite places just clicking on them in virtual cinema hall. 
+All the information about films is been parsing from wikipedia.org.
