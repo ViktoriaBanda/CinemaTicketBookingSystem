@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Cinema/App.axaml" value="Cinema/Cinema.csproj" />
+        <entry key="Cinema/Views/AllCinemasWindow.axaml" value="Cinema/Cinema.csproj" />
+        <entry key="Cinema/Views/CinemaNetworkWindow.axaml" value="Cinema/Cinema.csproj" />
+        <entry key="Cinema/Views/CinemasWindow.axaml" value="Cinema/Cinema.csproj" />
+        <entry key="Cinema/Views/FilmsPosterWindow.axaml" value="Cinema/Cinema.csproj" />
+        <entry key="Cinema/Views/FilmsWindow.axaml" value="Cinema/Cinema.csproj" />
+        <entry key="Cinema/Views/MainWindow.axaml" value="Cinema/Cinema.csproj" />
+        <entry key="Cinema/Views/RegistrationWindow.axaml" value="Cinema/Cinema.csproj" />
+        <entry key="Cinema/Views/TicketOfficeWindow.axaml" value="Cinema/Cinema.csproj" />
+        <entry key="Cinema/Views/TicketsWindow.axaml" value="Cinema/Cinema.csproj" />
+        <entry key="Cinema/Views/UserWindow.axaml" value="Cinema/Cinema.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

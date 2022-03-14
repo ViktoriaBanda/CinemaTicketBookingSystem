@@ -1,0 +1,115 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Cinema.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:models="clr-namespace:Cinema.Models"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Cinema.Views.TicketOfficeWindow"
+        Title="TicketOffice"
+    
+        Width="600"
+        Height="450"
+        
+        MinWidth="600"
+        MinHeight="450"
+        
+        WindowStartupLocation="CenterScreen"
+        >
+        
+        <Design.DataContext>
+                <vm:TicketOfficeWindowViewModel/>
+        </Design.DataContext>
+        
+      <Window.Styles>
+                <Style Selector="#ButtonsGrid > ToggleButton" >
+                        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                        <Setter Property="Height" Value="50"/>
+                        <Setter Property="Width" Value="50"/>
+                        <Setter Property="VerticalAlignment" Value="Stretch"/>
+                        <Setter Property="Margin" Value="3"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property = "CornerRadius" Value="3"/>
+                        <Setter Property = "Tag" Value="{Binding CurrentTicket}"/>
+                        <Setter Property="Content" Value="{Binding $self.Tag.Site}"/>
+                </Style>
+        </Window.Styles>
+    <Grid RowDefinitions="5* *">
+        <UniformGrid Name="ButtonsGrid"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Columns="6">
+            <TextBlock Text="1 ряд"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"></TextBlock>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[0]}"
+                                  IsChecked ="{Binding IsButtonChecked[0]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[1]}"
+                                  IsChecked ="{Binding IsButtonChecked[1]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[2]}"
+                                  IsChecked ="{Binding IsButtonChecked[2]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[3]}"
+                        IsChecked ="{Binding IsButtonChecked[3]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[4]}"
+                                  IsChecked ="{Binding IsButtonChecked[4]}"/>
+                    <TextBlock Text="2 ряд"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"></TextBlock>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[5]}"
+                                  IsChecked ="{Binding IsButtonChecked[5]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[6]}"
+                                  IsChecked ="{Binding IsButtonChecked[6]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[7]}"
+                                  IsChecked ="{Binding IsButtonChecked[7]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[8]}"
+                                  IsChecked ="{Binding IsButtonChecked[8]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[9]}"
+                                  IsChecked ="{Binding IsButtonChecked[9]}"/>
+                    <TextBlock Text="3 ряд"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"></TextBlock>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[10]}"
+                                  IsChecked ="{Binding IsButtonChecked[10]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[11]}"
+                                  IsChecked ="{Binding IsButtonChecked[11]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[12]}"
+                                  IsChecked ="{Binding IsButtonChecked[12]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[13]}"
+                                  IsChecked ="{Binding IsButtonChecked[13]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[14]}"
+                                  IsChecked ="{Binding IsButtonChecked[14]}"/>
+                    <TextBlock Text="4 ряд"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"></TextBlock>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[15]}"
+                                  IsChecked ="{Binding IsButtonChecked[15]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[16]}"
+                                  IsChecked ="{Binding IsButtonChecked[16]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[17]}"
+                                  IsChecked ="{Binding IsButtonChecked[17]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[18]}"
+                                  IsChecked ="{Binding IsButtonChecked[18]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[19]}"
+                                  IsChecked ="{Binding IsButtonChecked[19]}"/>
+                    <TextBlock Text="5 ряд"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"></TextBlock>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[20]}"
+                                  IsChecked ="{Binding IsButtonChecked[20]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[21]}"
+                                  IsChecked ="{Binding IsButtonChecked[21]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[22]}"
+                                  IsChecked ="{Binding IsButtonChecked[22]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[23]}"
+                                  IsChecked ="{Binding IsButtonChecked[23]}"/>
+                    <ToggleButton IsEnabled ="{Binding IsEnabled[24]}"
+                                  IsChecked ="{Binding IsButtonChecked[24]}"/>
+                 </UniformGrid>
+       
+        <Button Grid.Row = "1" Content="Забронировать"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Command="{Binding Reserve}"></Button>
+    </Grid>
+        </Window>

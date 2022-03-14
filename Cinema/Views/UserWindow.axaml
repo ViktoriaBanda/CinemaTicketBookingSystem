@@ -1,0 +1,60 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Cinema.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Cinema.Views.UserWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="User"
+        
+        Width="460"
+        Height="300"
+        
+        MinWidth="400"
+        MinHeight="300"
+        
+        WindowStartupLocation="CenterScreen">
+        
+        <Design.DataContext>
+                <vm:UserWindowViewModel/>
+        </Design.DataContext>
+        
+        
+        <Grid RowDefinitions="* 2* *">
+                <TextBlock Grid.Row="0" Text="Личный кабинет"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="18"
+                           Margin="20,0,0,0"
+                ></TextBlock>
+            
+                <StackPanel Grid.Row="1"  >
+                    <Button Content="Выбрать фильм"
+                            Command="{Binding ChooseFilm}"
+                            Width="140"
+                            HorizontalContentAlignment="Center"
+                            HorizontalAlignment="Left"
+                            FontSize="16"
+                            Margin="20,20,0,0"
+                    ></Button>
+                    <Button Content="Мои билеты"
+                            Command="{Binding OpenTickets}"
+                            Width="140"
+                            HorizontalContentAlignment="Center"
+                            HorizontalAlignment="Left"
+                            FontSize="16"
+                            Margin="20,20,0,0"
+                    ></Button>
+                </StackPanel>
+                <Button Grid.Row="2" 
+                        Content="Выход"
+                        Command="{Binding Exit}"
+                        Width="140"
+                        HorizontalContentAlignment="Center"
+                        HorizontalAlignment="Right"
+                        FontSize="16"
+                        Margin="20"
+                ></Button>
+        </Grid>
+</Window>

@@ -1,0 +1,77 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Cinema.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:models="clr-namespace:Cinema.Models"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Cinema.Views.FilmsWindow"
+        Title="Films"
+        Width="1000"
+        Height="700"
+        
+        MinWidth="400"
+        MinHeight="300"
+        
+        WindowStartupLocation="CenterScreen"
+>
+   <Window.Styles>
+                <Style Selector="Button.Cinemas">
+                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+                        <Setter Property="FontSize" Value="16"></Setter>
+                        <Setter Property="Margin" Value="20,0,20,15"></Setter>
+                </Style>
+        </Window.Styles>
+        
+        <Design.DataContext>
+                <vm:FilmsPosterWindowViewModel/>
+        </Design.DataContext>
+        
+        <Grid ColumnDefinitions="* *" RowDefinitions="Auto *">
+                
+                <TextBlock Grid.ColumnSpan="2" Text="Выберите фильм из списка"
+                           HorizontalAlignment="Center"
+                           FontSize="16"
+                           Margin="0, 10, 0, 10"
+                ></TextBlock>
+                
+                <ListBox Grid.Row="1" Items="{Binding _currentCinemaFilms}"
+                         SelectedItem="{Binding CurrentFilm}">
+                        <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="models:Film">
+                                        <TextBlock Text="{Binding Title}"
+                                        ></TextBlock>
+                                </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                </ListBox>
+                <StackPanel Grid.Row="1" Grid.Column="1"
+                                    Orientation="Vertical">
+                                <TextBlock Foreground="Red"
+                                   FontWeight="Bold"
+                                   Margin="10"
+                                   Text="{Binding CurrentFilm.Title}"/>
+                                
+                                <Image Width="800" Height="400" 
+                                       Source="{Binding Image}" />
+                                
+                               <TextBlock Text="{Binding StringFormat = Начало: {0}, 
+                                        Path = CurrentFilm.Time}"
+                                                   Margin="10"/>
+                                <TextBlock Text="{Binding StringFormat = Продолжительность: {0}, 
+                                        Path = CurrentFilm.Duration}"
+                                           Margin="10"/>
+                               <TextBlock Text="{Binding StringFormat = Жанр: {0}, 
+                                        Path =  CurrentFilm.Genre}"
+                                           Margin="10"/>
+                               <TextBlock Text="{Binding StringFormat = Цена билета: {0}, 
+                                        Path =  CurrentFilm.Price}"
+                                           Margin="10"/>
+                        
+                </StackPanel>
+                <Button Grid.Row="1" Grid.Column="1" Classes = "Cinemas"
+                        VerticalAlignment="Bottom"
+                        Content="Выбрать"
+                        Command="{Binding ChooseInterestingFilm}"></Button>
+        </Grid>
+</Window>

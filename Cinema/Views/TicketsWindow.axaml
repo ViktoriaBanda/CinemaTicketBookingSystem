@@ -1,0 +1,53 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Cinema.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:models="clr-namespace:Cinema.Models"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Cinema.Views.TicketsWindow"
+        Title="TicketsWindow"
+        Width="560"
+        Height="400"
+        
+        MinWidth="400"
+        MinHeight="300"
+        
+        WindowStartupLocation="CenterScreen"
+        >
+        
+        <Design.DataContext>
+                <vm:TicketsWindowViewModel/>
+        </Design.DataContext>
+        <Window.Styles>
+                <Style Selector="TextBlock.Texts">
+                        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+                        <Setter Property="FontSize" Value="13"></Setter>
+                        <Setter Property="Margin" Value="5"></Setter>
+                </Style>
+        </Window.Styles>
+        
+        <Grid RowDefinitions="Auto *">
+                <TextBlock Grid.ColumnSpan="2" Text="Билеты на сегодня" HorizontalAlignment="Center"
+                           FontSize="16"/>
+                <ListBox Grid.Row="1" Items="{Binding _currentUserTickets}">
+                <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="models:Ticket">
+                                <StackPanel>
+                                        <TextBlock Classes = "Texts" Text="{Binding StringFormat = Кинотеатр: {0},
+                                        Path =  CinemaName}" FontStyle="Italic" Foreground="Red"/>
+                                        <TextBlock  Classes = "Texts" Text="{Binding StringFormat = Фильм: {0}, 
+                                        Path =  FilmName}" FontWeight="DemiBold"/>
+                                        <TextBlock  Classes = "Texts" Text="{Binding StringFormat = Время: {0}, 
+                                        Path =  Time}"/>
+                                        <TextBlock  Classes = "Texts" Text="{Binding StringFormat = Ряд: {0}, 
+                                        Path =  Row}"/>
+                                        <TextBlock Classes = "Texts" Text="{Binding StringFormat = Место: {0}, 
+                                        Path =  Site}" />
+                                        <Rectangle Fill="Orange" Height="3" Width = "500" Margin="0, 0, 0, 5" />
+                                </StackPanel>
+                        </DataTemplate>
+                </ItemsControl.ItemTemplate>
+        </ListBox>
+        </Grid>
+</Window>

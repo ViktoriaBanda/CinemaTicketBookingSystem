@@ -1,0 +1,68 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Cinema.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Cinema.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Cinema"
+        
+        Width="460"
+        Height="300"
+        
+        MinWidth="460"
+        MinHeight="300"
+        
+        WindowStartupLocation="CenterScreen"
+>
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    <Grid RowDefinitions="* * * 2*">
+        <StackPanel  >
+            <TextBlock Text="Система бронирования билетов"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="16"
+                       ></TextBlock>
+            <TextBlock Text="{Binding Title}"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       FontSize="15"
+                       Margin="20,20,0,0"
+            ></TextBlock>
+        </StackPanel>
+       
+        <StackPanel Grid.Row="1"
+                    Margin="20,15,20, 0">
+            <TextBlock Text="Логин"
+            ></TextBlock>
+            <TextBox 
+                Text="{Binding Login}"
+            ></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="2"
+                    Margin="20,10,20,0">
+            <TextBlock Text="Пароль"
+            ></TextBlock>
+            <TextBox PasswordChar="*"
+                Text="{Binding Password}"
+            ></TextBox>
+        </StackPanel>
+        
+        <UniformGrid Grid.Row="3"
+                     Margin="20">
+            <Button Classes="LogIn"
+                    Content="Войти"
+                    Command="{Binding IsСorrectPassword}">
+            </Button>
+            
+            <Button Classes="LogIn"
+                    Content="Зарегистрироваться"
+                    Command="{Binding ShowRegistrationWindow}">
+                </Button>
+            </UniformGrid>
+    </Grid>
+</Window>
