@@ -8,7 +8,3 @@ All the information about films is been parsing from wikipedia.org.
 
 ![CinemaUml](https://user-images.githubusercontent.com/94225981/158172752-6d3fbef8-f7cf-4554-8d9b-5c1f937ee3b2.jpg)
 
-
-
-https://user-images.githubusercontent.com/94225981/160109465-15ed6230-1abf-4e3f-839d-71c84837bf75.mp4
-
